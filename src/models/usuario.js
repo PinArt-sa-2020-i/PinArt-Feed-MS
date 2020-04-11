@@ -4,8 +4,11 @@ const Schema = mongoose.Schema
 
 const usuarioSchema = new Schema(
     {
-        _id: {type: mongoose.Schema.Types.ObjectId},
-        multimedia_creada: {type: mongoose.Schema.Types.ObjectId, ref:'Multimedia'}
+        _id: {type: String},
+    },
+    {
+        versionKey: false, 
+        timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
     }
 );
 

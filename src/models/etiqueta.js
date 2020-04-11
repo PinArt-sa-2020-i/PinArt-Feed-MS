@@ -4,8 +4,12 @@ const Schema = mongoose.Schema;
 
 const etiquetaSchema = new Schema(
     {
-        _id:{type: mongoose.Schema.Types.ObjectId},
-        multimedia_relacionada = [{type: mongoose.Schema.Types.ObjectId, ref: 'Multimedia'}]
+        _id:{type: String},
+        multimedia_relacionada_ids: [{type: mongoose.Schema.Types.ObjectId, ref:'Multimedia'}]
+    },
+    {
+        versionKey: false, 
+        timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
     }
 );
 

@@ -4,7 +4,10 @@ const express = require('express')
 const api = express.Router()
 
 
-
+const Usuario= require('../models/usuario');
+const Etiqueta = require('../models/etiqueta');
+const Multimedia = require('../models/multimedia');
+// const Tablero = require('../models/tablero');
 //Rutas Asociadas a Multimedia
 //get para obtener una imagen y su informacion -> solamente recibe el id
 
@@ -37,8 +40,12 @@ const api = express.Router()
 //Otras rutas 
 
 //Aqui suele ir toda la info de la api
-api.get('info', (req, res) => {
-    res.send({message: "Buenas"})
+api.get('/user', (req, res) => {
+   
 })
+
+
+
+
 
 module.exports = api
