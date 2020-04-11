@@ -44,13 +44,7 @@ api.post('/getUsersFeed', feedCtrl.getUsersFeed)
 api.post('/getTagsFeed', feedCtrl.getTagsFeed)
 
 
-
 //Rutas auxiliares 
-api.post('/createUser', usuarioCtrl.signUp)
-api.post('/createMultimedia', multimediaCtrl.createMultimedia)
-api.post('/createTag', tagCtrl.createTag)
-api.post('/createTable', tableCtrl.createTable)
-
 
 //Aqui suele ir toda la info de la api
 api.get('/user', (req, res) => {
