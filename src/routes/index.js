@@ -2,27 +2,31 @@
 
 const express = require('express')
 const api = express.Router()
+const multimediaCtrl = require('../controllers/multimedia')
+const usuarioCtrl = require('../controllers/usuario')
+const tagCtrl = require('../controllers/etiqueta')
+const tableCtrl = require('../controllers/tablero')
 
 
-const Usuario= require('../models/usuario');
-const Etiqueta = require('../models/etiqueta');
-const Multimedia = require('../models/multimedia');
-// const Tablero = require('../models/tablero');
-//Rutas Asociadas a Multimedia
+ //Rutas Asociadas a Multimedia
+
 //get para obtener una imagen y su informacion -> solamente recibe el id
+
+api.get('/getMultimediaInformation/:multimediaId', multimediaCtrl.getMultimedia)
 
 
 
 //Rutas Asociadas a Usuarios
+
 //Get para todas las imagenes asociadas a un usuarios -> recibe el id de usuario
 
-
+api.get('/getMultimediaByUser/:userId', usuarioCtrl.getAllUserImages)
 
 
 //Rutas Asociadas a Etiquetas
 //Get para todas las imagenes asociadas a una etiqueta -> recibe el id de la etiqueta
 
-
+api.get('/getMultimediaByTag/:tagId', tagCtrl.getAllTagImages)
 
 
 //Rutas Asociadas a Tablero
@@ -37,11 +41,16 @@ const Multimedia = require('../models/multimedia');
 
 
 
-//Otras rutas 
+//Rutas auxiliares 
+api.post('/createUser', usuarioCtrl.signUp)
+api.post('/createMultimedia', multimediaCtrl.createMultimedia)
+api.post('/createTag', tagCtrl.createTag)
+api.post('/createTable', tableCtrl.createTable)
+
 
 //Aqui suele ir toda la info de la api
 api.get('/user', (req, res) => {
-   
+
 })
 
 

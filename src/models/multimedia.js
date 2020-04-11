@@ -11,7 +11,7 @@ const multimediaSchema = new Schema(
         tamano: {type:String},
         usuario_creador_id: {type: String, ref: 'Usuario'},
         etiquetas_relacionadas_ids: [{type: String, ref:'Etiqueta'}],
-        tableros_agregados_ids: [{type:String, ref:'Tablero'}]
+        tableros_agregados_ids: [{type:String, ref:'Tablero',}]
     },
     {
         versionKey: false, 
