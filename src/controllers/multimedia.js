@@ -1,6 +1,7 @@
 'use strict'
 
 const Multimedia = require('../models/multimedia')
+const Usuario = require('../models/usuario')
 
 function getMultimedia(req, res){
     let multimediaId = req.params.multimediaId
@@ -14,6 +15,7 @@ function getMultimedia(req, res){
             descripcion: multimedia.descripcion,
             tipo: multimedia.tipo,
             formato: multimedia.formato,
+            id_bucket: multimedia.id_bucket,
             usuario_creador_id: multimedia.usuario_creador_id,
             etiquetas_relacionadas_ids: multimedia.etiquetas_relacionadas_ids,
             tableros_agregados_ids: multimedia.tableros_agregados_ids,
@@ -21,24 +23,6 @@ function getMultimedia(req, res){
     })
 }
 
-const createMultimedia = (req, res) => {
-    let multimedia = new Multimedia()
-    multimedia.descripcion = req.body.descripcion
-    multimedia.url = req.body.url
-    multimedia.tipo = req.body.tipo
-    multimedia.formato = req.body.formato
-    multimedia.tamano = req.body.tamano
-    multimedia.usuario_creador_id = req.body.usuario_creador_id
-    multimedia.etiquetas_relacionadas_ids = req.body.etiquetas_relacionadas_ids
-    multimedia.tableros_agregados_ids = req.body.tableros_agregados_ids
-
-    multimedia.save((err, multimediaStored) => {
-        if (err) return res.status(500).send({ msg: `Error al crear multimedia: ${err}` })
-        return res.status(200).send({multimedia: multimediaStored})
-    })
-}
-
 module.exports = {
     getMultimedia,
-    createMultimedia,
 }

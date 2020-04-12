@@ -4,15 +4,6 @@
 const Tablero = require('../models/tablero')
 const Multimedia = require('../models/multimedia')
 
-const createTable = (req, res) => {
-    const tablero = new Tablero()
-    tablero._id = req.body._id
-    tablero.multimedia_agregada_ids = req.body.multimedia_agregada_ids
-    tablero.save((err, tableroStored) => {
-        if (err) return res.status(500).send({ msg: `Error al crear el tablero: ${err}` })
-        return res.status(200).send({tablero: tableroStored})
-    })
-}
 
 async function getAllTableImages(req, res){
 
@@ -34,11 +25,14 @@ async function getAllTableImages(req, res){
                 descripcion: multimediaTable.descripcion,
                 tipo: multimediaTable.tipo,
                 formato: multimediaTable.formato,
+                id_bucket: multimediaTable.id_bucket,
                 usuario_creador_id: multimediaTable.usuario_creador_id,
                 etiquetas_relacionadas_ids: multimediaTable.etiquetas_relacionadas_ids,
                 tableros_agregados_ids: multimediaTable.tableros_agregados_ids,
+                created_at: multimediaTag.created_at
             })
         }
+        multimediaByTable.sort(GetSortOrder("created_at"))
         res.status(200).send({
             multimediaByTable
         })
@@ -46,9 +40,17 @@ async function getAllTableImages(req, res){
     
 }
 
-
+function GetSortOrder(prop) {  
+    return function(a, b) {  
+        if (a[prop] < b[prop]) {  
+            return 1;  
+        } else if (a[prop] > b[prop]) {  
+            return -1;  
+        }  
+        return 0;  
+    }  
+}
 
 module.exports = {
-    createTable,
     getAllTableImages,
 }
