@@ -9,6 +9,7 @@ const multimediaSchema = new Schema(
         tipo: {type:String},
         formato: {type:String},
         tamano: {type:String},
+        id_bucket: {type:String},
         usuario_creador_id: {type: String, ref: 'Usuario'},
         etiquetas_relacionadas_ids: [{type: String, ref:'Etiqueta'}],
         tableros_agregados_ids: [{type:String, ref:'Tablero'}]
