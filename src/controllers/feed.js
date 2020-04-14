@@ -20,8 +20,8 @@ async function getUsersFeed(req, res){
                 formato: multimediaFeed[j].formato,
                 id_bucket: multimediaFeed[j].id_bucket,
                 usuario_creador_id: multimediaFeed[j].usuario_creador_id,
-                etiquetas_relacionadas_ids: multimediaFeed[j].etiquetas_relacionadas_ids,
-                tableros_agregados_ids: multimediaFeed[j].tableros_agregados_ids,
+                etiquetas_relacionada_ids: multimediaFeed[j].etiquetas_relacionada_ids,
+                tableros_agregado_ids: multimediaFeed[j].tableros_agregado_ids,
                 id: multimediaFeed[j]._id,
                 created_at: multimediaFeed[j].created_at
             })
@@ -41,7 +41,7 @@ async function getTagsFeed(req, res){
     let tagFeed = []
 
     for(let i=0; i < followedTags.length; i++){
-        let multimediaFeed = await Multimedia.find({etiquetas_relacionadas_ids: followedTags[i]}).exec();
+        let multimediaFeed = await Multimedia.find({etiquetas_relacionada_ids: followedTags[i]}).exec();
         for(let j=0; j < multimediaFeed.length; j++){
             tagFeed.push({
                 url: multimediaFeed[j].url,
@@ -50,8 +50,8 @@ async function getTagsFeed(req, res){
                 formato: multimediaFeed[j].formato,
                 id_bucket: multimediaFeed[j].id_bucket,
                 usuario_creador_id: multimediaFeed[j].usuario_creador_id,
-                etiquetas_relacionadas_ids: multimediaFeed[j].etiquetas_relacionadas_ids,
-                tableros_agregados_ids: multimediaFeed[j].tableros_agregados_ids,
+                etiquetas_relacionada_ids: multimediaFeed[j].etiquetas_relacionada_ids,
+                tableros_agregado_ids: multimediaFeed[j].tableros_agregado_ids,
                 id: multimediaFeed[j]._id,
                 created_at: multimediaFeed[j].created_at
             })

@@ -17,8 +17,8 @@ function getMultimedia(req, res){
             formato: multimedia.formato,
             id_bucket: multimedia.id_bucket,
             usuario_creador_id: multimedia.usuario_creador_id,
-            etiquetas_relacionadas_ids: multimedia.etiquetas_relacionadas_ids,
-            tableros_agregados_ids: multimedia.tableros_agregados_ids,
+            etiquetas_relacionada_ids: multimedia.etiquetas_relacionada_ids,
+            tableros_agregado_ids: multimedia.tableros_agregado_ids,
         })
     })
 }

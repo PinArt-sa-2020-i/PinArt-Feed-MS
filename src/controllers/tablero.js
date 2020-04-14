@@ -27,9 +27,9 @@ async function getAllTableImages(req, res){
                 formato: multimediaTable.formato,
                 id_bucket: multimediaTable.id_bucket,
                 usuario_creador_id: multimediaTable.usuario_creador_id,
-                etiquetas_relacionadas_ids: multimediaTable.etiquetas_relacionadas_ids,
-                tableros_agregados_ids: multimediaTable.tableros_agregados_ids,
-                created_at: multimediaTag.created_at
+                etiquetas_relacionada_ids: multimediaTable.etiquetas_relacionada_ids,
+                tableros_agregado_ids: multimediaTable.tableros_agregado_ids,
+                created_at: multimediaTable.created_at
             })
         }
         multimediaByTable.sort(GetSortOrder("created_at"))

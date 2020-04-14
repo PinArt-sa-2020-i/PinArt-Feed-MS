@@ -21,8 +21,8 @@ async function getAllUserImages(req, res){
                     formato: multimedia[j].formato,
                     id_bucket: multimedia[j].id_bucket,
                     usuario_creador_id: multimedia[j].usuario_creador_id,
-                    etiquetas_relacionadas_ids: multimedia[j].etiquetas_relacionadas_ids,
-                    tableros_agregados_ids: multimedia[j].tableros_agregados_ids,
+                    etiquetas_relacionada_ids: multimedia[j].etiquetas_relacionada_ids,
+                    tableros_agregado_ids: multimedia[j].tableros_agregado_ids,
                     id: multimedia[j]._id,
                     created_at: multimedia[j].created_at
                 })

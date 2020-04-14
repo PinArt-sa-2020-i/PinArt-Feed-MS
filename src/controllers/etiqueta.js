@@ -25,8 +25,8 @@ async function getAllTagImages(req, res){
                 formato: multimediaTag.formato,
                 id_bucket: multimediaTag.id_bucket,
                 usuario_creador_id: multimediaTag.usuario_creador_id,
-                etiquetas_relacionadas_ids: multimediaTag.etiquetas_relacionadas_ids,
-                tableros_agregados_ids: multimediaTag.tableros_agregados_ids,
+                etiquetas_relacionada_ids: multimediaTag.etiquetas_relacionada_ids,
+                tableros_agregado_ids: multimediaTag.tableros_agregado_ids,
                 created_at: multimediaTag.created_at
             })
         }
