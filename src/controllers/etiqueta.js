@@ -19,6 +19,7 @@ async function getAllTagImages(req, res){
         for(let i=0; i < multimediaId.length; i++){
             let multimediaTag = await Multimedia.findById(multimediaId[i]).exec();
             multimediaByTag.push({
+                id: multimediaTag._id,
                 url: multimediaTag.url,
                 descripcion: multimediaTag.descripcion,
                 tipo: multimediaTag.tipo,

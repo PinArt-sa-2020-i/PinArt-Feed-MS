@@ -21,6 +21,7 @@ async function getAllTableImages(req, res){
         for(let i=0; i < tableId.length; i++){
             let multimediaTable = await Multimedia.findById(tableId[i]).exec();
             multimediaByTable.push({
+                id: multimediaTable.id,
                 url: multimediaTable.url,
                 descripcion: multimediaTable.descripcion,
                 tipo: multimediaTable.tipo,
