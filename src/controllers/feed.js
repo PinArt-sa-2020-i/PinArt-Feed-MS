@@ -23,7 +23,9 @@ async function getUsersFeed(req, res){
                 etiquetas_relacionada_ids: multimediaFeed[j].etiquetas_relacionada_ids,
                 tableros_agregado_ids: multimediaFeed[j].tableros_agregado_ids,
                 id: multimediaFeed[j]._id,
-                created_at: multimediaFeed[j].created_at
+                created_at: multimediaFeed[j].created_at,
+                updated_at: multimediaFeed[j].updated_at,
+                tamano: multimediaFeed[j].tamano
             })
         }
     }
@@ -53,7 +55,9 @@ async function getTagsFeed(req, res){
                 etiquetas_relacionada_ids: multimediaFeed[j].etiquetas_relacionada_ids,
                 tableros_agregado_ids: multimediaFeed[j].tableros_agregado_ids,
                 id: multimediaFeed[j]._id,
-                created_at: multimediaFeed[j].created_at
+                created_at: multimediaFeed[j].created_at,
+                updated_at: multimediaFeed[j].updated_at,
+                tamano: multimediaFeed[j].tamano
             })
         }
         

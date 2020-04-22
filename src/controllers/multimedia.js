@@ -19,6 +19,10 @@ function getMultimedia(req, res){
             usuario_creador_id: multimedia.usuario_creador_id,
             etiquetas_relacionada_ids: multimedia.etiquetas_relacionada_ids,
             tableros_agregado_ids: multimedia.tableros_agregado_ids,
+            id: multimedia._id,
+            created_at: multimedia.created_at,
+            updated_at: multimedia.updated_at,
+            tamano: multimedia.tamano
         })
     })
 }

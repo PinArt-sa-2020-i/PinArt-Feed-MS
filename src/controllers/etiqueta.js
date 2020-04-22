@@ -19,7 +19,6 @@ async function getAllTagImages(req, res){
         for(let i=0; i < multimediaId.length; i++){
             let multimediaTag = await Multimedia.findById(multimediaId[i]).exec();
             multimediaByTag.push({
-                id: multimediaTag._id,
                 url: multimediaTag.url,
                 descripcion: multimediaTag.descripcion,
                 tipo: multimediaTag.tipo,
@@ -28,7 +27,10 @@ async function getAllTagImages(req, res){
                 usuario_creador_id: multimediaTag.usuario_creador_id,
                 etiquetas_relacionada_ids: multimediaTag.etiquetas_relacionada_ids,
                 tableros_agregado_ids: multimediaTag.tableros_agregado_ids,
-                created_at: multimediaTag.created_at
+                created_at: multimediaTag.created_at,
+                id: multimediaTag._id,
+                updated_at: multimediaTag.updated_at,
+                tamano: multimediaTag.tamano
             })
         }
         multimediaByTag.sort(GetSortOrder("created_at"))
