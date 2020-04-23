@@ -24,7 +24,9 @@ async function getAllUserImages(req, res){
                     etiquetas_relacionada_ids: multimedia[j].etiquetas_relacionada_ids,
                     tableros_agregado_ids: multimedia[j].tableros_agregado_ids,
                     id: multimedia[j]._id,
-                    created_at: multimedia[j].created_at
+                    created_at: multimedia[j].created_at,
+                    updated_at: multimedia[j].updated_at,
+                    tamano: multimedia[j].tamano
                 })
             }
             

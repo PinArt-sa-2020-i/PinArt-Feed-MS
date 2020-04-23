@@ -21,7 +21,6 @@ async function getAllTableImages(req, res){
         for(let i=0; i < tableId.length; i++){
             let multimediaTable = await Multimedia.findById(tableId[i]).exec();
             multimediaByTable.push({
-                id: multimediaTable.id,
                 url: multimediaTable.url,
                 descripcion: multimediaTable.descripcion,
                 tipo: multimediaTable.tipo,
@@ -30,7 +29,10 @@ async function getAllTableImages(req, res){
                 usuario_creador_id: multimediaTable.usuario_creador_id,
                 etiquetas_relacionada_ids: multimediaTable.etiquetas_relacionada_ids,
                 tableros_agregado_ids: multimediaTable.tableros_agregado_ids,
-                created_at: multimediaTable.created_at
+                created_at: multimediaTable.created_at,
+                id: multimediaTable._id,
+                updated_at: multimediaTable.updated_at,
+                tamano: multimediaTable.tamano
             })
         }
         multimediaByTable.sort(GetSortOrder("created_at"))
