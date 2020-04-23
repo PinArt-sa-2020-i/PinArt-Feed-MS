@@ -7,7 +7,7 @@ const usuarioCtrl = require('../controllers/usuario')
 const tagCtrl = require('../controllers/etiqueta')
 const tableCtrl = require('../controllers/tablero')
 const feedCtrl = require('../controllers/feed')
-
+const relatedCtrl = require('../controllers/relacionados')
 
 
  //Rutas Asociadas a Multimedia
@@ -35,6 +35,13 @@ api.get('/getMultimediaByTag/:tagId', tagCtrl.getAllTagImages)
 //Get para todas las imagenes asociadas a un tablero -> recibe el id del tablero
 
 api.get('/getMultimediaByTable/:tableId', tableCtrl.getAllTableImages)
+
+
+//Rutas Asociadas a Tablero
+//Get para todas las imagenes asociadas a un tablero -> recibe el id del tablero
+
+api.get('/getRelatedUsersByUserId/:userId', relatedCtrl.getRelatedUsersByUser)
+api.get('/getRelatedTagsByTag/:tagId', relatedCtrl.getRelatedTagsByTag)
 
 
 //Rutas Asociadas a Feed
