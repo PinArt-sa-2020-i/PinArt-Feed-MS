@@ -8,7 +8,9 @@ const options = {
     useNewUrlParser: true,
 }
 
-mongoose.connect(config.db, options, (err, res) => {
+let db = `mongodb://${config.db}/pinart-feed_multimedia-db`;
+
+mongoose.connect(db, options, (err, res) => {
     if(err){
         return console.log(`Error al conectar a la base de datos: ${err}`)
     }
