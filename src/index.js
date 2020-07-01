@@ -8,7 +8,7 @@ const options = {
     useNewUrlParser: true,
 }
 
-let db = `mongodb://${config.db}/pinart-feed_multimedia-db`;
+let db = `mongodb://${config.db}/pinart-feed_multimedia-db?readPreference=secondary`;
 
 mongoose.connect(db, options, (err, res) => {
     if(err){
